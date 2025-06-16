@@ -13,8 +13,8 @@
     "mongodb": "^6.17.0",
     "mongoose": "^8.15.2",
     "next": "15.3.3",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-flow-renderer": "^10.3.17",
     "react-zoom-pan-pinch": "^3.7.0"
   },
