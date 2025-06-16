@@ -173,7 +173,7 @@ export default function FamilyTree({ members, onMemberClick }: FamilyTreeProps) 
     );
   };
 
-  const renderNode = (node: TreeNode): JSX.Element => {
+  const renderNode = (node: TreeNode): React.ReactElement => {
     const hasSpouse = !!node.spouse;
     const hasChildren = node.children.length > 0;
     const childrenCount = node.children.length;
