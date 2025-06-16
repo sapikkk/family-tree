@@ -7,9 +7,11 @@ export async function GET() {
     await dbConnect();
     const members = await FamilyMember.find({}).sort({ createdAt: -1 });
     return NextResponse.json({ success: true, data: members });
-  } catch (error: any) {
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Terjadi kesalahan tak terduga";
     return NextResponse.json(
-      { success: false, error: error.message },
+      { success: false, error: message },
       { status: 500 }
     );
   }
@@ -53,8 +55,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, data: member }, { status: 201 });
   } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Terjadi kesalahan tak terduga";
     return NextResponse.json(
-      { success: false, error: error.message },
+      { success: false, error: message },
       { status: 500 }
     );
   }
